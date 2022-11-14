@@ -12,10 +12,10 @@ LISTA_CURSO =[
 ]
 
 LISTA_MINICURSO =[
-    ('1', 'intodução a computação grafica'),
-    ('2', 'introdução a construção de jogos'),
-    ('3', 'realidade virtual'),
-    ('4', 'computação nas nuvens'),
+    ('intodução a computação grafica', 'intodução a computação grafica'),
+    ('introdução a construção de jogos', 'introdução a construção de jogos'),
+    ('realidade virtual', 'realidade virtual'),
+    ('computação nas nuvens', 'computação nas nuvens'),
 ]
 
 
@@ -27,7 +27,11 @@ class Inscricao (models.Model):
     endereco = models.CharField(max_length=150)
     sexo = models.CharField(max_length=150, choices=LISTA_SEXO)
     curso = models.CharField(max_length=150, choices=LISTA_CURSO)
-    minicurso = models.CharField(max_length=150, choices=LISTA_MINICURSO)
+    opcao1 = models.BooleanField(verbose_name='intodução a computação grafica')
+    opcao2 = models.BooleanField(verbose_name='introdução a construção de jogos')
+    opcao3 = models.BooleanField(verbose_name='realidade virtual')
+    opcao4 = models.BooleanField(verbose_name='computação nas nuvens')
+    
 
 
     def __str__(self):
